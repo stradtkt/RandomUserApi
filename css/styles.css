@@ -7,6 +7,9 @@
 * {
 	box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+}
 
 html, body {
     width: 100%;
@@ -63,7 +66,7 @@ header h1 {
 }
 
 
-/* ===================================== 
+/* =====================================
    Gallery
 ======================================== */
 
@@ -76,7 +79,7 @@ header h1 {
     max-width: 1200px;
     margin: auto;
 }
-  
+
 .card {
     display: flex;
     flex-direction: row;
@@ -120,7 +123,7 @@ header h1 {
 }
 
 
-/* ===================================== 
+/* =====================================
    Modal
 ======================================== */
 
@@ -134,34 +137,23 @@ header h1 {
 }
 
 .modal {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    padding-top: 100px;
+    left: 40%;
+    top: 0;
+    width: 30%;
+    height: 90%;
+    overflow: auto;
+    background: rgb(125, 129, 143);
+    margin: 0 auto;
+    
+}
+
+.picture {
     position: relative;
-    width: 95%;
-    max-width: 420px;
-    min-height: 415px;
-    margin: 10px auto auto;
-    padding-bottom: 15px;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 0.25em;
-    border: 1px solid rgba(100, 100, 100, 0.3);
-    transition: .4s ease-out;
-}
-
-.modal-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(0, 0, 0, 0.8);
-    outline: none;
-    border-radius: 0.25em;
-    border: 1px solid rgba(50, 50, 50, 0.3);
-}
-
-.modal-img {
-    width: 150px;
-    margin-top: 35px;
-    border-radius: 50%;
+    right: 36px;
 }
 
 .modal-name {
@@ -206,13 +198,57 @@ header h1 {
     transition: .4s ease-out;
     outline: none;
   }
-  
 
-/* ===================================== 
+  .modal-content {
+      margin: 0 auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+  }
+
+  .overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	cursor: pointer;
+  }
+  .fas.fa-arrow-left,
+  .fas.fa-arrow-right {
+      display: inline-block;
+      font-size: 200%;
+      color: #222;
+      position: relative;
+      top: 300px;
+  }
+
+  .fas.fa-times {
+      color: red;
+      position: relative;
+      bottom: 190px;
+      left: 260px;
+  }
+  .fas.fa-arrow-right {
+      left: 30%
+  }
+  #myModal {
+      position: relative;
+      left: 50% !important;
+  }
+
+/* =====================================
    Media Queries
 ======================================== */
 
-/* ===================================== 
+/* =====================================
    Tablet
 ======================================== */
 
@@ -240,9 +276,9 @@ header h1 {
 }
 
 
-/* ===================================== 
+/* =====================================
    Desktop
-   Hover styles on desktop 
+   Hover styles on desktop
 ======================================== */
 
 @media (min-width: 1024px) {
@@ -253,11 +289,98 @@ header h1 {
     }
 
     .card:hover .card-text {
-        color: rgba(25, 25, 25, 1); 
+        color: rgba(25, 25, 25, 1);
     }
 
     .btn:hover {
         background: rgba(255, 255, 255, 1);
-        color: rgba(25, 25, 25, 1); 
+        color: rgba(25, 25, 25, 1);
     }
+}
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+body {
+    background: linear-gradient(130deg, rgba(42, 69, 99, 0.72), rgba(200, 204, 210, 0.67));
+    -webkit-background: linear-gradient(130deg, rgba(42, 69, 99, 0.72), rgba(200, 204, 210, 0.67));
+    -moz-background: linear-gradient(130deg, rgba(42, 69, 99, 0.72), rgba(200, 204, 210, 0.67));
+    -ms-background: linear-gradient(130deg, rgba(42, 69, 99, 0.72), rgba(200, 204, 210, 0.67));
+}
+#employee-section {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    border: 2px solid rgba(100,100,100,0.5);
+}
+td {
+    height: 190px;
+    width: 400px;
+    display: inline-block;
+    padding: 20px 10px;
+    margin: 1% 1%;
+    border-radius: 4px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    background: linear-gradient(125deg, rgba(250, 250, 250, 0.1), rgba(125, 129, 143, 0.41));
+    -webkit-background: linear-gradient(125deg, rgba(250, 250, 250, 0.1), rgba(125, 129, 143, 0.41));
+    -moz-background: linear-gradient(125deg, rgba(250, 250, 250, 0.1), rgba(125, 129, 143, 0.41));
+    -ms-background: linear-gradient(125deg, rgba(250, 250, 250, 0.1), rgba(125, 129, 143, 0.41));
+}
+img.profile-picture {
+    display: inline-block;
+    position: relative;
+    top: 33.5px;
+    left: 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+}
+
+.contact-info {
+    clear: both;
+    float: right;
+    text-align: center;
+}
+input.search {
+    width: 350px;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.6rem;
+    margin: 0 auto;
+    display: inline;
+    padding: 10px 0;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+}
+#reset,
+#search {
+    width: 150px;
+    height: 55px;
+    display: inline;
+    margin: 0 auto;
+    box-shadow: 4px 4px 10px 0.8px #222;
+    -webkit-box-shadow: 4px 4px 10px 0.8px #222;
+    -moz-box-shadow: 4px 4px 10px 0.8px #222;
+    -ms-box-shadow: 4px 4px 10px 0.8px #222;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+
+}
+
+
+.searchBarDiv {
+    display: inline-block;
+    padding: 50px 0;
 }

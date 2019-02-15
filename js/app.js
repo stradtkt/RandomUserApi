@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 
     /*========================================
     =            Global Variables            =
@@ -41,8 +41,8 @@ $(function() {
             var dateOfBirth = new Date(profile.dob);
             modalHTML = '<div class="modal">';
             modalHTML += '<div class="modal-content">';
-            modalHTML += '<span class="close">&times;</span>';
-            modalHTML += '<a href=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a><a href=""><i class="fa fa-arrow-right" aria-hidden="true"></i></a>';
+            modalHTML += '<span class="close"><i class="fas fa-times"></i></span>';
+            modalHTML += '<a href=""><i class="fas fa-arrow-left" aria-hidden="true"></i></a><a href=""><i class="fas fa-arrow-right" aria-hidden="true"></i></a>';
             modalHTML += '<img class="picture" src="' + profile.picture.large + '">';
             modalHTML += '<div class="text-content">';
             modalHTML += '<h3 class="name text-center">' + profile.name.first + " " + profile.name.last + '</h3>';
@@ -53,7 +53,6 @@ $(function() {
             modalHTML += '<p class="number text-center">' + profile.cell + '</p>';
             modalHTML += '<p class="street text-center">' + profile.location.street + '</p>';
             modalHTML += '<p class="city text-center">' + profile.location.city + ", " + profile.location.postcode + ", " + profile.nat +'</p>';
-            modalHTML += '<p class="date-of-birth text-center">DOB: ' + dateOfBirth.getMonth() + '/' + dateOfBirth.getDate() + '/' + dateOfBirth.getYear() + '</p>';
             modalHTML += '</div>';
             modalHTML += '</div>';
             $('#myModal').append(modalHTML);
