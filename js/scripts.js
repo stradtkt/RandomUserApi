@@ -4,7 +4,7 @@ $(document).ready(function() {
     =            Global Variables            =
     ========================================*/
 
-    var employeeURL = 'https://randomuser.me/api/?results=128&nat=us';
+    var employeeURL = 'https://randomuser.me/api/?results=12&nat=us';
     var dataOptions = {
         dataType: 'json'
     };
